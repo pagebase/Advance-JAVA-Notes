@@ -38,17 +38,16 @@ public class Test
 
         System.out.println("Register Driver");
 
-        String URL="jdbc:oracle:thin:@localhost:1521:XE:'system', 'password'";
-
+       
         String myLine="CREATE TABLE Student(Roll int)";
 
-        DRiverManager.registerDriver(new oracleDriver());
+        DriverManager.registerDriver(new OracleDriver());
 
         System.out.println("Driver Registered");
 
         System.out.println("Establish connection");
 
-        Connection con=DriverManager.getConnection(URL);
+        Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system", "password");
 
         System.out.println("Connected successfully!");
 
